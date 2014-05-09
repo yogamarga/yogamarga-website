@@ -1,0 +1,38 @@
+name: Invoiceful
+markdown: redcarpet
+pygments: true
+
+# Prettier URL
+permalink: /:title/
+
+# We are adding this below:
+source: ./src
+destination: ./src_tmp
+
+en:
+    landing-page:
+        title: 'Unlimited Invoicing'
+el:
+    landing-page:
+        title: 'Απεριόριστη Τιμολόγηση'
+
+
+t:
+    el:
+        home:  "Αρχική"
+        about: "Περί"
+        # jumbotron: "Απεριόριστη Τιμολόγηση"
+        jumbotron: "Α Β Γ"
+        FEATURES: "Χαρακτηριστικά"
+        PRICING: "Τιμολογιακή Πολιτική"
+    en:
+        home:  "Home"
+        about: "About"
+        # jumbotron: "Unlimited Invoicing"
+        jumbotron: "A B C"
+        FEATURES: "Features"
+        PRICING: "Pricing"
+
+
+
+

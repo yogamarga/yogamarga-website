@@ -1,0 +1,29 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+.metadata
+.RemoteSystemsTempFiles
+.Servers
+VMware vFabric tc Server Developer Edition v2.9-config
+*.project
+*.prefs
+*.classpath
+*.settings
+*.target
+
+*dist
+*servers
+*node_modules
+*idea
+*.iml
+*.launch
+build
+*.sass-cache
+*vendor
+*src_tmp
+
+/.gradle
