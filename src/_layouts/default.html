@@ -6,10 +6,15 @@
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" type="text/css" href="/<%= grunt.config.get('pkg.name') %>.css" />
+        <link rel="stylesheet" type="text/css" href="/yogamarga.css" />
+
 
     </head>
     <body>
+        <div class="container">
+
+        </div>
+
         {% include header.html %}
 
         <div class="container">
@@ -17,5 +22,8 @@
         </div>
 
         {% include footer.html %}
+
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="bootstrap.min.js"></script>
     </body>
 </html>

@@ -1,4 +1,4 @@
-name: Invoiceful
+name: YogaMarga
 markdown: redcarpet
 pygments: true
 
@@ -19,19 +19,18 @@ el:
 
 t:
     el:
-        home:  "Αρχική"
-        about: "Περί"
-        # jumbotron: "Απεριόριστη Τιμολόγηση"
-        jumbotron: "Α Β Γ"
-        FEATURES: "Χαρακτηριστικά"
-        PRICING: "Τιμολογιακή Πολιτική"
+        HOME:  "Αρχική"
+        CLASSES: "Μαθήματα"
+        EVENTS: "Εκδηλώσεις"
+        CONTACT: "Επικοινωνία"
+        TEACHERS: "Δάσκαλοι"
     en:
-        home:  "Home"
-        about: "About"
-        # jumbotron: "Unlimited Invoicing"
-        jumbotron: "A B C"
-        FEATURES: "Features"
-        PRICING: "Pricing"
+        HOME:  "Home"
+        CLASSES: "Classes"
+        EVENTS: "Events"
+        CONTACT: "Contact"
+        TEACHERS: "Teachers"
+
 
 
 
