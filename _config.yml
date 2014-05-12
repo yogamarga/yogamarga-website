@@ -3,33 +3,56 @@ markdown: redcarpet
 pygments: true
 
 # Prettier URL
-permalink: /:title/
+# permalink: /:title/
+permalink: /:categories/:title
 
 # We are adding this below:
 source: ./src
 destination: ./src_tmp
 
-en:
-    landing-page:
-        title: 'Unlimited Invoicing'
-el:
-    landing-page:
-        title: 'Απεριόριστη Τιμολόγηση'
 
+# Add asciidoctor for asciidoc files
+asciidoc: asciidoctor
+asciidoc_ext: asciidoc,adoc,ad
+asciidoctor:
+  safe: safe
+  attributes:
+    - notitle!
+    - hardbreaks
+    - idprefix=
+    - idseparator=-
+    - linkattrs
 
+#SiteMap
+sitemap:
+    file: "/sitemap.xml"
+    exclude:
+        - "/atom.xml"
+        - "/feed.xml"
+        - "/feed/index.xml"
+    include_posts:
+        - "/index.html"
+    change_frequency_name: "change_frequency"
+    priority_name: "priority"
+
+#Language Translations
 t:
     el:
         HOME:  "Αρχική"
-        CLASSES: "Μαθήματα"
-        EVENTS: "Εκδηλώσεις"
-        CONTACT: "Επικοινωνία"
         TEACHERS: "Δάσκαλοι"
+        CLASSES: "Μαθήματα"
+        SCHOOL: "Σχολή"
+        EVENTS: "Εκδηλώσεις"
+        BLOG: "Blog"
+        CONTACT: "Επικοινωνία"
     en:
         HOME:  "Home"
-        CLASSES: "Classes"
-        EVENTS: "Events"
-        CONTACT: "Contact"
         TEACHERS: "Teachers"
+        CLASSES: "Classes"
+        SCHOOL: "School"
+        EVENTS: "Events"
+        BLOG: "Blog"
+        CONTACT: "Contact"
 
 
 

@@ -68,9 +68,11 @@ module.exports = function (grunt) {
                     {dest: '<%= project.dist %>/', src : '**/*.html', expand: true, cwd: '<%= project.src_tmp %>/' },
                     {dest: '<%= project.dist %>/assets/', src : '**', expand: true, cwd: '<%= project.src_tmp %>/assets/'},
                     {dest: '<%= project.dist %>/fonts', src : '**', expand: true, cwd: 'vendor/bootstrap/dist/fonts/'},
-                    {dest: '<%= project.dist %>/', src : 'jquery.min.map', expand: true, cwd: 'vendor/jquery/dist/'},
-                    {dest: '<%= project.dist %>/', src : 'jquery.min.js', expand: true, cwd: 'vendor/jquery/dist/'},
-                    {dest: '<%= project.dist %>/', src : 'bootstrap.min.js', expand: true, cwd: 'vendor/bootstrap/dist/js/'}
+                    {dest: '<%= project.dist %>/', src : ['jquery.min.js', 'jquery.min.map'], expand: true, cwd: 'vendor/jquery/dist/'},
+                    {dest: '<%= project.dist %>/', src : 'bootstrap.min.js', expand: true, cwd: 'vendor/bootstrap/dist/js/'},
+                    {dest: '<%= project.dist %>/', src : 'favicon.ico', expand: true, cwd: '<%= project.src_tmp %>/assets' },
+                    {dest: '<%= project.dist %>/', src : 'sitemap.xml', expand: true, cwd: '<%= project.src_tmp %>/' }
+                    // {dest: '<%= project.dist %>/', src : 'logo1.png', expand: true, cwd: '<%= project.src_tmp %>/assets/images' },
                 ]
             },
             website: {

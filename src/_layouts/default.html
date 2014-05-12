@@ -2,13 +2,21 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><![endif]-->
+        <meta name="viewport" content="width=device-width"/>
         <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" type="text/css" href="/yogamarga.css" />
 
+        <!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/><![endif]-->
+        <!--[if !IE]><!--><link rel="icon" type="image/x-icon" href="/favicon.ico"/><!--<![endif]-->
 
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
     </head>
     <body>
         <div class="container">
@@ -17,13 +25,28 @@
 
         {% include header.html %}
 
+
+        {% if page.ancestors.size > 0 %}
+        <div class="container">
+            <ol class="breadcrumb">
+                {% for p in page.ancestors %}
+                    {% if p.title.trim != '' %}
+                        <li><a href="{{ p.url }}">{{ p.title }}</a>
+                        <li class="divider">&gt;</li>
+                    {% endif %}
+                {% endfor %}
+                <li class="active">{{ page.title }}</li>
+            </ol>
+        </div>
+        {% endif %}
+
         <div class="container">
             {{ content }}
         </div>
 
         {% include footer.html %}
 
-        <script type="text/javascript" src="jquery.min.js"></script>
-        <script type="text/javascript" src="bootstrap.min.js"></script>
+        <script type="text/javascript" src="/jquery.min.js"></script>
+        <script type="text/javascript" src="/bootstrap.min.js"></script>
     </body>
 </html>
