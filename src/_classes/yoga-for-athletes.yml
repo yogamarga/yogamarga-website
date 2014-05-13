@@ -1,4 +1,13 @@
 active: true
+layout: class
+image:
+  url: /assets/images/classes/yoga-for-athletes/class.jpg
+  title: Yoga For Athletes
+  alt: Yoga For Athletes
+category: yoga
+type: yoga-for-athletes
+name: Yoga For Athletes
+
 bio:
   Wandering far and wide in search of greater meaning, Ralph has been a
   student of many disciplines, and sat at the feet of many a marketing
@@ -18,17 +27,10 @@ bio:
   that and two dollars will buy you at a coffeeshop... that's right... a cup of
   green tea (his drink of choice when coworking in Phoenix).
 email: ralph@flatterline.com
-image:
-  url: /images/ralph-miller.jpg
-  title: Professional SEO Consultant
-  alt: Ralph Miller
-layout: profile
+
 linkedin: ralphmillerjr
-name: Ralph Miller
 role: Professional SEO Consultant
 short:
   Ralph is our <a href="/team/ralph-miller">professional seo consultant</a> who handles the business and marketing for our clients at Flatterline.
   When not chasing down leads or backlinks you can find him meditating, practicing yoga or polishing his, er... lightsaber.
 twitter: FearlessAdvisor
-category: yoga
-type: yoga-for-athletes

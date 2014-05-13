@@ -1,12 +1,48 @@
 ---
 layout: default
 lang: el
-title: YogaMarga | Classes
+title: YogaMarga | Μαθήματα
 ---
 
+<div class="page-header">
+    <h1>Μαθήματα <small></small></h1>
+</div>
 
-{% for class in page.classes['yoga'] %}
+<div class="row">
+    <div class="col-md-10">
+        <!-- YOGA CLASSES-->
+        {% if page.classes['yoga'] %}
+            {% for class in page.classes['yoga'] %}
+            <div class="col-md-4">
+                {% if class[1].image %}
+                <a href="/pages/classes/{{ class[0] }}">
+                    <img src="{{ class[1].image.url }}" title="{{ class[1].image.title }}" alt="{{ class[1].image.alt }}" width="150" class="img-rounded" />
+                </a>
+                {% endif %}
+                <h3><a href="/pages/classes/{{ class[0] }}">{{ class[1].name }}</a></h3>
+                <p>Μπλα μπλα μπλα .....</p>
+                <hr/>
+            </div>
+            {% endfor %}
+        {% endif %}
+        <!-- SOME OTHER CLASSES-->
+        {% if page.classes['something_else'] %}
+            {% for class in page.classes['something_else'] %}
+            <div class="col-md-4">
+                {% if class[1].image %}
+                <a href="/pages/classes/{{ class[0] }}">
+                    <img src="{{ class[1].image.url }}" title="{{ class[1].image.title }}" alt="{{ class[1].image.alt }}" width="150" class="img-rounded" />
+                </a>
+                {% endif %}
+                <h3><a href="/pages/classes/{{ class[0] }}">{{ class[1].name }}</a></h3>
+                <p>Μπλα μπλα μπλα .....</p>
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
 
-        <h1>HELLO {{ class[1].type }}</h1>
+    <div class="col-md-2" style="min-height: 500px; background-color: #FF0000;">
+           ajskhdjkhakjh dkjahskdhkjasdhkjas jjjjj
+    </div>
 
-{% endfor %}
+</div> <!-- <div class="row"> -->

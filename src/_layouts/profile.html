@@ -2,7 +2,7 @@
 layout: default
 ---
 <div id="profile" class="row">
-  <div class="span4">
+  <div class="col-md-4">
     {% if page.image %}
       <div id="profile-photo">
         <img src="{{ page.image.url }}" title="{{ page.image.title }}" alt="{{ page.image.alt }}" width="200" height="200" />
@@ -10,7 +10,7 @@ layout: default
     {% endif %}
   </div>
 
-  <div class="span11">
+  <div class="col-md-11">
     <h1>
       {{ page.name }}
       <small>{{ page.role }}</small>

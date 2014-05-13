@@ -1,14 +1,12 @@
 ---
 layout: default
 lang: el
-title: YogaMarga | Classes
+title: YogaMarga | Teachers
 ---
 
 <div class="page-header">
     <h1>Δάσκαλοι <small>... Οι άνθρωποι πίσω από τη YogaMarga</small></h1>
 </div>
-
-
 
 <div class="container">
     <div class="row">
@@ -17,11 +15,12 @@ title: YogaMarga | Classes
         {% for teacher in page.teachers['ceo'] %}
             <div class="col-md-4">
                 {% if teacher[1].image %}
+                <a href="/pages/teachers/{{ teacher[0] }}">
                     <img src="{{ teacher[1].image.url }}" title="{{ teacher[1].image.title }}" alt="{{ teacher[1].image.alt }}" width="150" class="img-circle" />
+                </a>
                 {% endif %}
-                <h3>{{ teacher[1].name }}</h3>
+                <h3><a href="/pages/teachers/{{ teacher[0] }}">{{ teacher[1].name }}</a></h3>
                 <p>Μπλα μπλα μπλα .....</p>
-                <p><a href="/pages/teachers/{{ teacher[0] }}">Περισσότερες Πληροφορίες</a></p>
             </div>
         {% endfor %}
     {% endif %}
@@ -30,11 +29,12 @@ title: YogaMarga | Classes
         {% for teacher in page.teachers['external'] %}
         <div class="col-md-4">
             {% if teacher[1].image %}
-            <img src="{{ teacher[1].image.url }}" title="{{ teacher[1].image.title }}" alt="{{ teacher[1].image.alt }}" width="150" class="img-circle" />
+            <a href="/pages/teachers/{{ teacher[0] }}">
+                <img src="{{ teacher[1].image.url }}" title="{{ teacher[1].image.title }}" alt="{{ teacher[1].image.alt }}" width="150" class="img-circle" />
+            </a>
             {% endif %}
-            <h3>{{ teacher[1].name }}</h3>
+            <h3><a href="/pages/teachers/{{ teacher[0] }}">{{ teacher[1].name }}</a></h3>
             <p>Μπλα μπλα μπλα .....</p>
-            <p><a href="/pages/teachers/{{ teacher[0] }}">Περισσότερες Πληροφορίες</a></p>
         </div>
         {% endfor %}
     {% endif %}

@@ -1,4 +1,13 @@
 active: true
+layout: class
+image:
+  url: /assets/images/classes/kundalini-yoga/class.jpg
+  title: Kundalini Yoga
+  alt: Kundalini Yoga
+category: yoga
+type: kundalini-yoga
+name: Kundalini Yoga
+
 bio:
   We are an Interactive Design Agency.
 
@@ -6,16 +15,10 @@ bio:
   Building your business by design is our passion.
   We specialize in Branding, Interactive Websites, and Custom Application Development.
 github: codyl
-image:
-  url: /images/codyl.jpg
-  title: codyL
-  alt: codyL
-layout: profile
+
+
 linkedin:
-name: codyL
 role: Interactive Design Agency
 short:
 twitter: codyL
-category: yoga
-type: kundalini
 website: codyl.com
