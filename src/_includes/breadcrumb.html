@@ -1,0 +1,12 @@
+{% if page.ancestors.size > 0 %}
+<ul class="breadcrumbs">
+    {% for p in page.ancestors %}
+        {% if p.title.trim != '>' %}
+            <li><a href="{{ p.url }}">{{ p.title }}</a>
+        {% endif %}
+    {% endfor %}
+    <li class="active">{{ page.title }}</li>
+</ul>
+{% endif %}
+
+

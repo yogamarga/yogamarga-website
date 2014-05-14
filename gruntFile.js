@@ -7,7 +7,7 @@ module.exports = function (grunt) {
     require('time-grunt')(grunt);
 
     // define the tasks
-    grunt.registerTask('build', [ 'clean', 'shell:jekyllBuild', 'less:prod', 'copy' ]);
+    grunt.registerTask('build', [ 'clean', 'shell:jekyllBuild', 'compass', 'copy' ]);
     grunt.registerTask('default', ['build', 'connect', 'watch']);
 
     // Read package variables from json file
@@ -61,15 +61,37 @@ module.exports = function (grunt) {
             }
         },
 
+        // Compass Compile
+        compass: {
+            dist: {
+                options: {
+                    sassDir: '<%= project.src %>/scss',
+                    cssDir: '<%= project.dist %>/css',
+                    generatedImagesDir: '<%= project.dist %>/images/generated',
+                    imagesDir: '<%= project.src %>/assets/img',
+                    javascriptsDir: '<%= project.src %>/scripts',
+                    fontsDir: '<%= project.src %>/styles/fonts',
+                    importPath: 'vendor',
+                    httpImagesPath: '/img',
+                    httpGeneratedImagesPath: '/img',
+                    httpFontsPath: '/styles/fonts',
+                    relativeAssets: false,
+                    assetCacheBuster: false,
+                    raw: 'Sass::Script::Number.precision = 10\n'
+                }
+            }
+        },
+
         // Copy files
         copy: {
             build: {
                 files: [
                     {dest: '<%= project.dist %>/', src : '**/*.html', expand: true, cwd: '<%= project.src_tmp %>/' },
                     {dest: '<%= project.dist %>/assets/', src : '**', expand: true, cwd: '<%= project.src_tmp %>/assets/'},
-                    {dest: '<%= project.dist %>/fonts', src : '**', expand: true, cwd: 'vendor/bootstrap/dist/fonts/'},
-                    {dest: '<%= project.dist %>/', src : ['jquery.min.js', 'jquery.min.map'], expand: true, cwd: 'vendor/jquery/dist/'},
-                    {dest: '<%= project.dist %>/', src : 'bootstrap.min.js', expand: true, cwd: 'vendor/bootstrap/dist/js/'},
+                    {dest: '<%= project.dist %>/fonts/', src : '**', expand: true, cwd: 'vendor/bootstrap/dist/fonts/'},
+                    {dest: '<%= project.dist %>/js/', src : ['jquery.min.js', 'jquery.min.map'], expand: true, cwd: 'vendor/jquery/dist/'},
+                    {dest: '<%= project.dist %>/js/', src : 'foundation.min.js', expand: true, cwd: 'vendor/foundation/js/'},
+                    {dest: '<%= project.dist %>/js/', src : 'modernizr.js', expand: true, cwd: 'vendor/modernizr'},
                     {dest: '<%= project.dist %>/', src : 'favicon.ico', expand: true, cwd: '<%= project.src_tmp %>/assets' },
                     {dest: '<%= project.dist %>/', src : 'sitemap.xml', expand: true, cwd: '<%= project.src_tmp %>/' }
                     // {dest: '<%= project.dist %>/', src : 'logo1.png', expand: true, cwd: '<%= project.src_tmp %>/assets/images' },
@@ -90,6 +112,10 @@ module.exports = function (grunt) {
             less: {
                 files: ['<%= project.src %>/less/stylesheet.less', '<%= project.src %>/less/**/*.less'],
                 tasks: [ 'less:prod' ]
+            },
+            scss: {
+                files: ['<%= project.src %>/scss/stylesheet.scss', '<%= project.src %>/scss/**/*.scss'],
+                tasks: [ 'compass' ]
             },
             copy: {
                 files: [ '<%= project.src %>/**', '!<%= project.src %>/**/*.less', '!<%= project.src %>/**/*.coffee', '!<%= project.src %>/**/*.jade' ],

@@ -4,45 +4,57 @@ lang: el
 title: YogaMarga | Μαθήματα
 ---
 
-<div class="page-header">
-    <h1>Μαθήματα <small></small></h1>
+<div class="panel callout radius">
+    <h3>{{ site.t[page.lang].CLASSES }} <small></small></h3>
 </div>
 
-<div class="row">
-    <div class="col-md-10">
+<div class="row" data-equalizer>
+    <!-- Classes -->
+    <div class="medium-9 columns" data-equalizer-watch>
         <!-- YOGA CLASSES-->
-        {% if page.classes['yoga'] %}
-            {% for class in page.classes['yoga'] %}
-            <div class="col-md-4">
+        <div class="row">
+            {% if page.classes['yoga'] %}
+                {% for class in page.classes['yoga'] %}
+                    <div class="medium-4 columns">
+                        <h5 class="subheader"><a href="/pages/classes/{{ class[0] }}">{{ class[1].name }}</a></h5>
+                        {% if class[1].image %}
+                        <a href="/pages/classes/{{ class[0] }}">
+                            <img src="{{ class[1].image.url }}" title="{{ class[1].image.title }}" alt="{{ class[1].image.alt }}" width="150" class="img-rounded" />
+                        </a>
+                        {% endif %}
+                        <p>Μπλα μπλα μπλα .....</p>
+                        <hr/>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <!-- SOME OTHER CLASSES-->
+        <div class="row">
+            {% if page.classes['something_else'] %}
+            {% for class in page.classes['something_else'] %}
+            <div class="medium-4 columns">
                 {% if class[1].image %}
                 <a href="/pages/classes/{{ class[0] }}">
                     <img src="{{ class[1].image.url }}" title="{{ class[1].image.title }}" alt="{{ class[1].image.alt }}" width="150" class="img-rounded" />
                 </a>
                 {% endif %}
-                <h3><a href="/pages/classes/{{ class[0] }}">{{ class[1].name }}</a></h3>
+                <h4 class="subheader"><a href="/pages/classes/{{ class[0] }}">{{ class[1].name }}</a></h4>
                 <p>Μπλα μπλα μπλα .....</p>
                 <hr/>
             </div>
             {% endfor %}
-        {% endif %}
-        <!-- SOME OTHER CLASSES-->
-        {% if page.classes['something_else'] %}
-            {% for class in page.classes['something_else'] %}
-            <div class="col-md-4">
-                {% if class[1].image %}
-                <a href="/pages/classes/{{ class[0] }}">
-                    <img src="{{ class[1].image.url }}" title="{{ class[1].image.title }}" alt="{{ class[1].image.alt }}" width="150" class="img-rounded" />
-                </a>
-                {% endif %}
-                <h3><a href="/pages/classes/{{ class[0] }}">{{ class[1].name }}</a></h3>
-                <p>Μπλα μπλα μπλα .....</p>
-            </div>
-            {% endfor %}
-        {% endif %}
+            {% endif %}
+        </div>
     </div>
-
-    <div class="col-md-2" style="min-height: 500px; background-color: #FF0000;">
-           ajskhdjkhakjh dkjahskdhkjasdhkjas jjjjj
+    <!-- Side Menu -->
+    <div class="medium-3 columns">
+        <div class="panel" data-equalizer-watch>
+            <ul class="side-nav">
+                <li><a href="#">{{ site.t[page.lang].CLASSES }}</a></li>
+                <li><a href="#">{{ site.t[page.lang].SCHEDULE }}</a></li>
+                <li><a href="#">{{ site.t[page.lang].PRICING }}</a></li>
+            </ul>
+        </div>
     </div>
+</div>
 
-</div> <!-- <div class="row"> -->

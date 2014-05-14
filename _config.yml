@@ -45,6 +45,8 @@ t:
         EVENTS: "Εκδηλώσεις"
         BLOG: "Blog"
         CONTACT: "Επικοινωνία"
+        SCHEDULE: "Πρόγραμμα"
+        PRICING: "Τιμές"
     en:
         HOME:  "Home"
         TEACHERS: "Teachers"
@@ -53,6 +55,8 @@ t:
         EVENTS: "Events"
         BLOG: "Blog"
         CONTACT: "Contact"
+        SCHEDULE: "Schedule"
+        PRICING: "Pricing"
 
 
 

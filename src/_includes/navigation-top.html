@@ -1,0 +1,46 @@
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <h1><a href="/">YogaMarga</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            {% if page.url  contains 'teachers' %}
+                <li class="active"><a href="/pages/teachers">{{ site.t[page.lang].TEACHERS }}</a></li>
+            {% else %}
+               <li><a href="/pages/teachers">{{ site.t[page.lang].TEACHERS }}</a></li>
+            {% endif %}
+
+            {% if page.url  contains 'classes' %}
+                <li class="active"><a href="/pages/classes">{{ site.t[page.lang].CLASSES }}</a></li>
+            {% else %}
+                <li><a href="/pages/classes">{{ site.t[page.lang].CLASSES }}</a></li>
+            {% endif %}
+
+            {% if page.url  contains 'school' %}
+                <li class="active"><a href="/pages/school">{{ site.t[page.lang].SCHOOL }}</a></li>
+            {% else %}
+                <li><a href="/pages/school">{{ site.t[page.lang].SCHOOL }}</a></li>
+            {% endif %}
+
+            {% if page.url  contains 'events' %}
+                <li class="active"><a href="/pages/events">{{ site.t[page.lang].EVENTS }}</a></li>
+            {% else %}
+                <li><a href="/pages/events">{{ site.t[page.lang].EVENTS }}</a></li>
+            {% endif %}
+
+            {% if page.url  contains 'blog' %}
+                <li class="active"><a href="/pages/blog">{{ site.t[page.lang].BLOG }}</a></li>
+            {% else %}
+                <li><a href="/pages/blog">{{ site.t[page.lang].BLOG }}</a></li>
+            {% endif %}
+
+        </ul>
+    </section>
+</nav>
+

@@ -1,44 +1,43 @@
 ---
 layout: default
 lang: el
-title: YogaMarga | Teachers
+title: YogaMarga | ΔΑΣΚΑΛΟΙ
 ---
 
-<div class="page-header">
-    <h1>Δάσκαλοι <small>... Οι άνθρωποι πίσω από τη YogaMarga</small></h1>
+<div class="panel callout radius">
+    <h3>{{ site.t[page.lang].TEACHERS }} <small>... Οι άνθρωποι πίσω από τη YogaMarga</small></h3>
 </div>
 
-<div class="container">
-    <div class="row">
-
-    {% if page.teachers['ceo'] %}
-        {% for teacher in page.teachers['ceo'] %}
-            <div class="col-md-4">
-                {% if teacher[1].image %}
-                <a href="/pages/teachers/{{ teacher[0] }}">
-                    <img src="{{ teacher[1].image.url }}" title="{{ teacher[1].image.title }}" alt="{{ teacher[1].image.alt }}" width="150" class="img-circle" />
-                </a>
-                {% endif %}
-                <h3><a href="/pages/teachers/{{ teacher[0] }}">{{ teacher[1].name }}</a></h3>
-                <p>Μπλα μπλα μπλα .....</p>
-            </div>
-        {% endfor %}
-    {% endif %}
-
-    {% if page.teachers['external'] %}
-        {% for teacher in page.teachers['external'] %}
-        <div class="col-md-4">
+<div class="row">
+{% if page.teachers['ceo'] %}
+    {% for teacher in page.teachers['ceo'] %}
+        <div class="small-12 small-centered columns">
             {% if teacher[1].image %}
             <a href="/pages/teachers/{{ teacher[0] }}">
-                <img src="{{ teacher[1].image.url }}" title="{{ teacher[1].image.title }}" alt="{{ teacher[1].image.alt }}" width="150" class="img-circle" />
+                <img src="{{ teacher[1].image.url }}" title="{{ teacher[1].image.title }}" alt="{{ teacher[1].image.alt }}" width="150" height="150"/>
             </a>
             {% endif %}
-            <h3><a href="/pages/teachers/{{ teacher[0] }}">{{ teacher[1].name }}</a></h3>
+            <h4 class="subheader"><a href="/pages/teachers/{{ teacher[0] }}">{{ teacher[1].name }}</a></h4>
             <p>Μπλα μπλα μπλα .....</p>
         </div>
-        {% endfor %}
-    {% endif %}
+    {% endfor %}
+{% endif %}
+</div>
 
+<div class="row">
+{% if page.teachers['external'] %}
+    {% for teacher in page.teachers['external'] %}
+    <div class="small-12 medium-4 columns">
+        {% if teacher[1].image %}
+        <a href="/pages/teachers/{{ teacher[0] }}">
+            <img src="{{ teacher[1].image.url }}" title="{{ teacher[1].image.title }}" alt="{{ teacher[1].image.alt }}" width="150" class="img-circle" />
+        </a>
+        {% endif %}
+        <h4 class="subheader"><a href="/pages/teachers/{{ teacher[0] }}">{{ teacher[1].name }}</a></h4>
+        <p>Μπλα μπλα μπλα .....</p>
     </div>
+    {% endfor %}
+{% endif %}
+
 </div>
 

@@ -1,20 +1,24 @@
 ---
 layout: default
 ---
-<div id="profile" class="row">
-    <div class="col-md-4">
+
+<div class="row">
+    <div class="small-12 columns">
+        <div class="panel callout radius">
+            <h3>{{ page.name }} <small></small></h3>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="small-12 columns">
         {% if page.image %}
         <div id="profile-photo">
             <img src="{{ page.image.url }}" title="{{ page.image.title }}" alt="{{ page.image.alt }}" width="200" height="200" class="img-rounded"/>
         </div>
         {% endif %}
-    </div>
 
-    <div class="col-md-11">
-        <h1>
-            {{ page.name }}
-            <small>{{ page.role }}</small>
-        </h1>
+        <hr/>
 
         {{ page.bio }}
 
